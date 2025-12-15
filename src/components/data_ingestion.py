@@ -11,6 +11,9 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
+from src.components.model_trainer import ModelTrain
+from src.components.model_trainer import ModelTrainConfig
+
 @dataclass
 class DataIngestionConfig:
     train_data_path: str = os.path.join('artifacts', 'train.csv')
@@ -52,9 +55,13 @@ class DataIngestion:
         except Exception as e:
             raise CustomException(e, sys)
         
-if __name__ == "__main__":
+if __name__ == "__main__": 
     obj = DataIngestion()
     train_data, test_data = obj.initiate_data_ingestion()
 
     data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation(train_data, test_data)
+    train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data, test_data)
+
+    model_trainer = ModelTrain()
+    final_r2 = model_trainer.initiate_model_trainer(train_arr, test_arr)
+    logging.info(f"Model training completed. Final R2 on test set: {final_r2}")
