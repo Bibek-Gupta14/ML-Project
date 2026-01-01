@@ -192,15 +192,12 @@ Raw Data → Ingestion → Transformation → Training → Evaluation → Deploy
 
 ---
 
-## 📝 License
-
-This project is part of a comprehensive Data Science and Machine Learning course.
-
----
-
 ## 👤 Author
 
-Created as a practical implementation of end-to-end ML project lifecycle.
+Created an end-to-end ML project lifecycle.
+
+- ✅ Name: Bibek Gupta
+- ✅ Email: bibekg1406@gmail.com
 
 ---
 
