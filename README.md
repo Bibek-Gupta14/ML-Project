@@ -101,7 +101,7 @@ ML Project/
 
 ### Prerequisites
 - Python 3.x
-- pip or conda
+- pip and conda environment
 
 ### Installation
 
